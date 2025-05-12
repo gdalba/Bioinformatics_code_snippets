@@ -1,6 +1,6 @@
 # Bioinformatics Code Snippets
 
-This repository contains code that was developed by me over the last few years. For the Bioinformatics Scientist job.
+This repository contains code that was developed by me over the last few years. Not everything is perfect nor For the Bioinformatics Scientist job.
 
 ---
 ## Data Processing
@@ -13,7 +13,7 @@ On-demand small code to address specific needs. Usually not elegant.
 
 `ctenotation_gff_statistics.py`: Compiles statistics of .gff3 file. Creates a database .db file with gffutils for faster access. 
 
-`modify_fastq_names.py` & `reformat_headers.py`: Quick modification to headers or file names to match tool's demands.
+`extract_and_get_fasta.py`: If a gene had no annotation, I'd get the sequences to try different approaches later on.
 
 ---
 ## Functional Annotation
@@ -58,5 +58,12 @@ Contain my modularization efforts to build `.pbs` files and automatically submit
 Case-specific needs of generating plots.
 
 `ORIGINAL_TE_log_scatterplot.py`: For pairwise comparisons across genomes. At the time I wanted to compare three genomes pairwise. Output is under embargo and cannot be displayed.
-`plot_kimura_Distance.py`:
+
+---
+
+## Misc
+
+Contains non-categorize examples of code.
+
+---
  
