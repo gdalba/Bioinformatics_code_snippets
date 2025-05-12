@@ -49,7 +49,7 @@ Usage:
 
 ## PBS
 
-Contain my modularization efforts to build `.pbs` files and automatically submit them to UBC's SOCKEYE HPC cluster. `PROJECT_ENV(REMOVED_FOR_PRIVACY)` is intentionally modified to not give sensitive information about my lab's project name.
+Contain my modularization efforts to build `.pbs` files and automatically submit them to UBC's SOCKEYE HPC cluster. `PROJECT_ENV(REMOVED_FOR_PRIVACY)` or `(REMOVED_FOR_PRIVACY)` is intentional, to not give sensitive information about my lab's project name.
 
 ---
 
@@ -63,7 +63,7 @@ Case-specific needs of generating plots.
 
 ## Misc
 
-Contains non-categorize examples of code.
+Contains non-categorized examples of code.
 
 ---
  
