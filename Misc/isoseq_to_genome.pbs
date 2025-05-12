@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#PBS -l walltime=72:00:00,select=1:ncpus=32:mem=186gb
+#PBS -N mm2_isoseq
+#PBS -A (REMOVED_FOR_PRIVACY)
+#PBS -m abe
+#PBS -M gdalba@phas.ubc.ca
+
+source /project/(REMOVED_FOR_PRIVACY)/gdalba/anaconda3/etc/profile.d/conda.sh
+conda activate minimap2
+
+READS="/scratch/(REMOVED_FOR_PRIVACY)/gdalba/PAPER_ANALYSIS/RAW_FILES/RNA_READS/BOL_ISOSEQ/SRR18516523_1.fastq.gz"
+GENOME="/scratch/(REMOVED_FOR_PRIVACY)/PAPER_ANALYSIS/RAW_FILES/GENOME/Mle_EDTA_PLUS_TRF/Mnemiopsis_leidyi_genome.fa.masked"
+cd $PBS_O_WORKDIR
+
+minimap2 -x splice:hq -a -t 32 $GENOME $READS > isoseq_minimap2_alignment.sam
+
+conda activate hisat2
+
+samtools view  -@ 32 -bS isoseq_minimap2_alignment.sam > isoseq_minimap2_alignment.bam
+samtools sort -@ 32 isoseq_minimap2_alignment.bam -o sorted_isoseq_minimap2_alignment.bam
+samtools flagstat sorted_isoseq_minimap2_alignment.bam
+
+rm isoseq_minimap2_alignment.bam
+rm isoseq_minimap2_alignment.sam
+

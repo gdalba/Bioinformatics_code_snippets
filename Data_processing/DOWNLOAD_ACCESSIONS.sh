@@ -2,7 +2,7 @@
 
 input_sra_list="SraAccList.txt"
 
-source /project/st-ssplotki-1/gdalba/anaconda3/etc/profile.d/conda.sh
+source /project/(REMOVED_FOR_PRIVACY)/gdalba/anaconda3/etc/profile.d/conda.sh
 conda activate entrez
 
 echo "SRA accessions to download:"
