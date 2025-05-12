@@ -16,7 +16,6 @@ print('-t or --threads for threads')
 print('-oh or --overhang for overhang')
 print('-----------------------------------')
 
-# Parse command-line arguments
 parser = argparse.ArgumentParser(description='Build PBS scripts with STAR.')
 parser.add_argument('-i', '--input', required=True, help='input folder with .fastq.gz files')
 parser.add_argument('-g', '--genome', required=True, help='genome fasta file')
@@ -25,18 +24,15 @@ parser.add_argument('-t', '--threads', required=True, type=int, help='number of 
 parser.add_argument('-oh', '--overhang', required=True, type=int, help='Overhang parameter for STAR genome Indexing')
 args = parser.parse_args()
 
-# Get the arguments
 input_folder = args.input
 genome_file = args.genome
 output_dir = args.output
 threads = args.threads
 overhang = args.overhang
 
-# Check if output_dir exists, if not create it
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
-# Group fastq files by base name (without _1 or _2 and extension)
 fastq_files = os.listdir(input_folder)
 base_to_files = defaultdict(list)
 for file_name in fastq_files:
@@ -44,11 +40,9 @@ for file_name in fastq_files:
         base_name = file_name.rsplit('_', 1)[0] if '_1' in file_name or '_2' in file_name else file_name
         base_to_files[base_name].append(os.path.join(input_folder, file_name))
 
-# STAR command for single-end and paired-end
 star_cmd_single = "STAR --runThreadN {threads} --genomeDir {genome_index_dir} --readFilesIn {input_files} --readFilesCommand zcat --outFileNamePrefix {output_prefix}"
 star_cmd_paired = "STAR --runThreadN {threads} --genomeDir {genome_index_dir} --readFilesIn {input_file1} {input_file2} --readFilesCommand zcat --outFileNamePrefix {output_prefix}"
 
-# PBS script template
 pbs_template = """#!/bin/bash
 #PBS -l walltime=36:00:00,select=1:ncpus={threads}:mem=186gb
 #PBS -N {analysis_name}

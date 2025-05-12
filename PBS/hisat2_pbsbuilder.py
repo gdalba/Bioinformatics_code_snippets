@@ -28,20 +28,20 @@ for file_name in fastq_files:
         base_name = file_name.rsplit('_', 1)[0] if '_1' in file_name or '_2' in file_name else file_name
         base_to_files[base_name].append(os.path.join(input_folder, file_name))
 
-# HISAT2 command for single-end and paired-end
 hisat2_cmd_single = "hisat2 -x {genome_index} -U {input_files} --dta --sensitive --qc-filter --summary-file {summary_file} -S {sam_file} -p {threads}"
 hisat2_cmd_paired = "hisat2 -x {genome_index} -1 {input_file1} -2 {input_file2} --dta --sensitive --qc-filter --summary-file {summary_file} -S {sam_file} -p {threads}"
 
+# PBS script template
 pbs_template = """#!/bin/bash
 #PBS -l walltime=36:00:00,select=1:ncpus={threads}:mem=32gb
 #PBS -N {analysis_name}
-#PBS -A st-ssplotki-1
+#PBS -A (REMOVED_FOR_PRIVACY)
 #PBS -m abe
 #PBS -M gdalba@phas.ubc.ca
 #PBS -o {output_file}
 #PBS -e {error_file}
 
-source /project/st-ssplotki-1/gdalba/anaconda3/etc/profile.d/conda.sh
+source /project/(REMOVED_FOR_PRIVACY)/gdalba/anaconda3/etc/profile.d/conda.sh
 
 conda activate hisat2
 
