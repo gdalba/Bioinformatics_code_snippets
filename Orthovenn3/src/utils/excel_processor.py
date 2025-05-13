@@ -14,6 +14,7 @@ def filter_excel(identifiers, input_file):
     import re
     
     print(f"Reading Excel file: {input_file}")
+    df = pd.read_excel(input_file, engine='openpyxl')
     print(f"Excel file columns: {df.columns.tolist()}")
     
     clean_identifiers = []
