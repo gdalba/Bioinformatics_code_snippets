@@ -11,9 +11,9 @@ On-demand small code to address specific needs. Usually not elegant.
 
 `bol_gff_cleaner_v1.py`: Formatting of .gff3 file with a missing column.
 
-`ctenotation_gff_statistics.py`: Compiles statistics of .gff3 file. Creates a database .db file with gffutils for faster access. 
+`ctenotation_gff_statistics.py`: Compiles statistics of .gff3 file. Creates a database .db file with gffutils for faster access. ("Ctenotation merges Ctenophore + Annotation, I'd name a tool like this!!"
 
-`extract_and_get_fasta.py`: If a gene had no annotation, I'd get the sequences to try different approaches later on.
+`extract_and_get_fasta.py`: If a gene in a comprehensive list of functional annotations have no annotation whatsoever, thsi script gets the sequence from a fasta file based on the ID. Useful to to try different functional annotation approaches later on.
 
 ---
 ## Functional Annotation
