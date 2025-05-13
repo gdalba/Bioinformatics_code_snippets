@@ -1,0 +1,11 @@
+name: excel-filter-project
+channels:
+  - defaults
+dependencies:
+  - python=3.8
+  - pandas
+  - openpyxl
+  - xlrd
+  - pip
+  - pip:
+      - sysarg
