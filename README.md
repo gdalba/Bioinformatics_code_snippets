@@ -1,6 +1,6 @@
 # Bioinformatics Code Snippets
 
-This repository contains code that was developed by me over the last few years. Not everything is perfect nor For the Bioinformatics Scientist job.
+This repository contains code that was developed by me over the last few years. For the Bioinformatics Scientist job.
 
 ---
 ## Data Processing
