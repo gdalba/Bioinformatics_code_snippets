@@ -16,6 +16,7 @@ def main():
     
     for cluster_name, identifiers in clusters.items():
         print(f"\nProcessing {cluster_name} with {len(identifiers)} identifiers...")
+        filtered_data = filter_excel(identifiers, input_excel_file)
         
         output_dir = os.path.dirname(input_excel_file)
         base_name = os.path.basename(input_excel_file)
