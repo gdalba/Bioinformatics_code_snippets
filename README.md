@@ -13,7 +13,7 @@ On-demand small code to address specific needs. Usually not elegant.
 
 `ctenotation_gff_statistics.py`: Compiles statistics of .gff3 file. Creates a database .db file with gffutils for faster access. ("Ctenotation merges Ctenophore + Annotation, I'd name a tool like this!!"
 
-`extract_and_get_fasta.py`: If a gene in a comprehensive list of functional annotations have no annotation whatsoever, thsi script gets the sequence from a fasta file based on the ID. Useful to to try different functional annotation approaches later on.
+`extract_and_get_fasta.py`: If a gene in a comprehensive list of functional annotations have no annotation whatsoever, this script gets the sequence from a fasta file based on the ID. Useful to to try different functional annotation approaches later on.
 
 ---
 ## Functional Annotation
@@ -23,8 +23,6 @@ After compiling functional annotation about gene models, these were useful to tr
 `GOs_by_obo_optimized.py`: Makes use of GO's .obo file to access entries locally instead of requesting through slow API.
 
 `KEGG_IDs.py` & `KEGG_PATHWAYS.py`: Same goal as above but through API (using bioservices).
-
-To process hundreds of thousands of entries through API, I deploy `import_GOs_to_Table.py` called through `run_GO_import.sh`
 
 ---
 ## Overhang_Values_For_STAR
