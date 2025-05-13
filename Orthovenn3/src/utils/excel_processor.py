@@ -72,8 +72,8 @@ def filter_excel(identifiers, input_file, species_id):
     
     filtered_df = df[mask]
     
-    print(f"Original data: {len(df)} rows")
-    print(f"Filtered data: {len(filtered_df)} rows")
+    #print(f"Original data: {len(df)} rows")
+    #print(f"Filtered data: {len(filtered_df)} rows")
     
     if len(filtered_df) == 0:
         print("No matches found! Here are the first few rows of the Excel file:")

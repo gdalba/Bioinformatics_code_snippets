@@ -20,7 +20,7 @@ def main():
         # Filter Excel data based on identifiers for this cluster
         filtered_data = filter_excel(identifiers, input_excel_file, species_id)
         
-        output_dir = os.path.dirname(input_excel_file)
+        output_dir = os.path.dirname(cluster_file) # Moved output to the same directory as the input file
         base_name = os.path.basename(input_excel_file)
         name_without_ext = os.path.splitext(base_name)[0]
         output_file = os.path.join(output_dir, f"{name_without_ext}_{cluster_name}_filtered.xlsx")
