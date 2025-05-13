@@ -1,6 +1,6 @@
 # Bioinformatics Code Snippets
 
-This repository contains code that was developed by me over the last few years. For the Bioinformatics Scientist job.
+This repository contains code that was developed by me over the last few years. For review of the Aparicio Lab panel of interviewers for the Bioinformatics Scientist job.
 
 ---
 ## Data Processing
