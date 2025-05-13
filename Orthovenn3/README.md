@@ -1,6 +1,6 @@
 # Orthovenn3 Orthogroup Filter
 
-This project is designed to filter entries from an Excel (.xlsx) file based on identifiers provided in a text (.txt) file. The application reads the identifiers, searches for them in the Excel file, and outputs a new Excel file containing only the matching entries. 
+This project is designed to filter entries from an Excel (.xlsx) file based on identifiers provided in a text (.txt) file. The application reads the identifiers, searches for them in the Excel file, and outputs a new Excel file containing only the matching entries.
 
 ## Project Structure
 
@@ -35,7 +35,7 @@ This will install all the necessary dependencies specified in the `environment.y
 3. Run the script using the following command:
 
 ```bash
-python src/main.py <path_to_identifiers.txt> <path_to_input.xlsx> <path_to_output.xlsx>
+python src/main.py <cluster_file.txt> <input_excel.xlsx> <species_id>
 ```
 
 Replace `<path_to_identifiers.txt>`, `<path_to_input.xlsx>`, and `<path_to_output.xlsx>` with the actual file paths.
@@ -51,3 +51,7 @@ ID3
 ```
 
 And an Excel file `data.xlsx`, running the script will produce a new Excel file containing only the rows that match the identifiers from `identifiers.txt`.
+
+## Contributing
+
+Feel free to submit issues or pull requests if you have suggestions or improvements for the project.

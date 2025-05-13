@@ -1,6 +1,7 @@
 import sys
 import re
 
+'''
 def read_identifiers(file_path):
     """
     Read identifiers from a text file.
@@ -18,6 +19,8 @@ def read_identifiers(file_path):
     except Exception as e:
         print(f"Error reading file {file_path}: {str(e)}")
         sys.exit(1)
+
+'''
 
 def read_clusters(file_path):
     """

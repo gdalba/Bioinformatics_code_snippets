@@ -4,19 +4,21 @@ from utils.excel_processor import filter_excel, save_filtered_data
 from utils.file_handler import read_clusters
 
 def main():    
-    if len(sys.argv) != 3:
-        print("Usage: python main.py <cluster_file.txt> <input_excel.xlsx>")
+    if len(sys.argv) != 4:
+        print("Usage: python main.py <cluster_file.txt> <input_excel.xlsx> <species_id> <- Ensure to use the same name you used when uploading that species file to orthovenn3.")
         print("Output files will be created as <input>_<cluster>_filtered.xlsx")
         sys.exit(1)    
     
     cluster_file = sys.argv[1]
     input_excel_file = sys.argv[2]
     clusters = read_clusters(cluster_file)
+    species_id = sys.argv[3]
     
     
     for cluster_name, identifiers in clusters.items():
         print(f"\nProcessing {cluster_name} with {len(identifiers)} identifiers...")
-        filtered_data = filter_excel(identifiers, input_excel_file)
+        # Filter Excel data based on identifiers for this cluster
+        filtered_data = filter_excel(identifiers, input_excel_file, species_id)
         
         output_dir = os.path.dirname(input_excel_file)
         base_name = os.path.basename(input_excel_file)
